@@ -7,7 +7,8 @@ node {
    }
    stage('test') {
      nodejs(nodeJSInstallationName: 'nodejs') {
-       sh 'npm install ms -S --only=dev'
+       sh 'npm uninstall npm'
+       sh 'npm install --only=dev'
        sh 'npm test'
      }
    }
